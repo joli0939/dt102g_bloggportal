@@ -1,0 +1,48 @@
+﻿@model IEnumerable<Bloggportal.Models.PostDetail>
+
+@{
+    ViewData["Title"] = "ShowUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>ShowUser</h1>
+
+<p>
+    Felmeddelande: @ViewBag.error
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Header)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Content)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreationDate)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Header)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Content)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreationDate)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
